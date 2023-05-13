@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>제품 소싱 중개 플랫폼 "소싱포스"</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>제품 공모사이트</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">마이 페이지</a></li>
+            <li><a href="#">제품 목록</a></li>
+            <li><a href="#">CS 센터</a></li>
+            <li><a href="#">로그인</a></li> <!-- 로그인 링크 -->
+        </ul>
+    </nav>
+    <div class="sns-login">
+        <a href="#" class="sns-button google">Google 로그인</a>
+        <a href="#" class="sns-button naver">Naver 로그인</a>
+    </div>
+    
+    <main>
+        <section id="stock-list">
+            <h2>제품 목록</h2>
+            <ul>
+                <li>
+                    <img src="samsung.jpg" alt="삼성전자">
+                    <span class="stock-name">삼성전자</span>
+                    <span class="stock-name">비회원가</span>
+                    <span class="stock-price">80,000원</span>
+                    <div class="request-wrapper">
+                        <input type="text" placeholder="수량 입력" class="request-input">
+                        <button class="request-button">공급 신청</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="lg.jpg" alt="LG화학"> 
+                    <span class="stock-name">LG화학</span>
+                    <span class="stock-name">비회원가</span>
+                    <span class="stock-price">350,000원</span>
+                    <div class="request-wrapper">
+                        <input type="text" placeholder="수량 입력" class="request-input">
+                        <button class="request-button">공급 신청</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="sk.jpg" alt="하이닉스">
+                    <span class="stock-name">하이닉스</span>
+                    <span class="stock-name">비회원가</span>
+                    <span class="stock-price">120,000원</span>
+                    <div class="request-wrapper">
+                        <input type="text" placeholder="수량 입력" class="request-input">
+                        <button class="request-button">공급 신청</button>
+                    </div>
+                </li>
+                <!-- 다른 주식 목록 추가 -->
+            </ul>
+        </section>
+        
+        <section id="order-history">
+            <h2>주문 내역</h2>
+            <table>
+                <tr>
+                    <th>제품 이름</th>
+                    <th>샘플 수량(EA)</th>
+                    <th>실수량(EA)</th>
+                    <th>주문 일자</th>
+                </tr>
+                <tr>
+                    <td>겔럭시</td>
+                    <td>3</td>
+                    <td>10</td>
+                    <td>2023-05-13</td>
+                </tr>
+                <tr>
+                    <td>겔럭시</td>
+                    <td>3</td>
+                    <td>10</td>
+                    <td>2023-05-12</td>
+                </tr>
+                <tr>
+                    <td>겔럭시</td>
+                    <td>3</td>
+                    <td>10</td>
+                    <td>2023-05-12</td>
+                </tr>
+            </table>
+        </section>
+        <section id="request-history">
+            <h2>출고 내역</h2>
+            <table>
+                <tr>
+                    <th>삼성전자</th>
+                    <th>겔럭시</th>
+                    <th>제품 샘플 수량(EA)</th>
+                    <th>3</th>
+                    <th>공급 실수량(EA)</th>
+                    <th>10</th>
+                </tr>
+                <tr>
+                    <th>하이닉스</th>
+                    <th>겔럭시</th>
+                    <th>제품 샘플 수량(EA)</th>
+                    <th>3</th>
+                    <th>공급 실수량(EA)</th>
+                    <th>10</th>
+                </tr>
+                <tr>
+                   <th>삼성전자</th>
+                   <th>카메라</th>
+                    <th>제품 샘플 수량(EA)</th>
+                    <th>3</th>
+                    <th>공급 실수량(EA)</th>
+                    <th>10</th>
+                </tr>
+                <!-- 다른 제품 샘플 및 공급 실수량 추가 -->
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 웰씨코리아. All rights reserved.</p>
+    </footer>
+    <script>
+        // JavaScript 코드
+        // 로그인 상태에 따라 회원가입/비회원가입 상태를 토글하여 디자인을 변경
+        var loginLi = document.getElementById("login-li");
+        
+        // 예시로 로그인 버튼 클릭 시 회원가입 상태로 변경되도록 설정
+        loginLi.addEventListener("click", function() {
+            loginLi.classList.toggle("member");
+        });
+        // JavaScript 코드
+        // 로그인 상태에 따라 비회원가와 회원가를 필터링하여 디자인 변경
+var loginButton = document.getElementById("login-button");
+var stockPrices = document.getElementsByClassName("stock-price");
+var membershipPrices = document.getElementsByClassName("membership-price");
+
+// 예시로 로그인 버튼 클릭 시 회원가입 상태로 변경되도록 설정
+loginButton.addEventListener("click", function() {
+    var isMember = loginButton.classList.contains("member");
+    
+    // 비회원가와 회원가를 필터링하여 디자인 변경
+    for (var i = 0; i < stockPrices.length; i++) {
+        if (isMember) {
+            stockPrices[i].style.display = "none";
+            membershipPrices[i].style.display = "inline";
+        } else {
+            stockPrices[i].style.display = "inline";
+            membershipPrices[i].style.display = "none";
+        }
+    }
+});
+    </script>
+</body>
+<style>
+  /* 전체 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 내비게이션 스타일 */
+nav {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* 메뉴 아이템들을 가로로 정렬하기 위해 Flexbox 레이아웃 사용 */
+    justify-content: center; /* 가운데 정렬 */
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+}
+
+/* 메인 콘텐츠 스타일 */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+
+h3 {
+    margin-bottom: 10px;
+}
+
+/* SNS 로그인 스타일 */
+        .sns-login {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .sns-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .sns-button:hover {
+            background-color: #555;
+        }
+
+/* 주식 목록 스타일 */
+#stock-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#stock-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.stock-name {
+    font-weight: bold;
+}
+
+.stock-price {
+    margin-right: 20px;
+}
+
+.buy-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background-color: #555;
+}
+
+/* 제품 이미지 스타일 */
+#stock-list li img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+/* 주문 내역 스타일 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+/* 공급신청 버튼 및 입력란 스타일 */
+.request-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.request-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.request-button:hover {
+    background-color: #555;
+}
+
+.request-input {
+    width: 60px;
+    padding: 5px;
+    margin-left: 10px; /* 수량 입력란과 공급신청 버튼 사이의 간격을 띄우기 위한 왼쪽 마진 추가 */
+}
+
+.request-input + .request-button {
+    margin-left: 10px; /* 수량 입력란의 버튼과 공급신청 버튼 사이의 간격을 띄우기 위한 왼쪽 마진 추가 */
+}
+/* 회원가입 상태일 때의 스타일 */
+.member #login-button {
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+/* 비회원가입 상태일 때의 스타일 */
+#login-button {
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.stock-price {
+    display: inline;
+}
+
+.membership-price {
+    display: none;
+}
+</style
+</html>
