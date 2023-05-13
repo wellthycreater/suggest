@@ -17,11 +17,18 @@
             <li><a href="#">로그인</a></li> <!-- 로그인 링크 -->
         </ul>
     </nav>
-    <div class="sns-login">
-        <a href="#" class="sns-button google">Google 로그인</a>
-        <a href="#" class="sns-button naver">Naver 로그인</a>
-    </div>
-    
+<div class="sns-login-channel">
+        <h3>간편 로그인</h3>
+        <div class="sns-login-buttons">
+            <button class="google-login-button">
+                <img src="google_logo.png" alt="Google 로고">
+                <span>구글 로그인</span>
+            </button>
+            <button class="naver-login-button">
+                <img src="naver_logo.png" alt="Naver 로고">
+                <span>네이버 로그인</span>
+            </button>
+        </div>
     <main>
         <section id="stock-list">
             <h2>제품 목록</h2>
@@ -210,26 +217,33 @@ h3 {
     margin-bottom: 10px;
 }
 
-/* SNS 로그인 스타일 */
-        .sns-login {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+/* SNS 로그인 채널 스타일 */
+.sns-login-channel {
+    text-align: center;
+    margin: 20px 0;
+}
 
-        .sns-button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            margin-right: 10px;
-            text-decoration: none;
-        }
+.sns-login-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
 
-        .sns-button:hover {
-            background-color: #555;
-        }
+.sns-login-buttons button {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    padding: 5px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
 
+.sns-login-buttons button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
 /* 주식 목록 스타일 */
 #stock-list ul {
     list-style-type: none;
